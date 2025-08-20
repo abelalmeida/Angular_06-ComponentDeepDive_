@@ -1,0 +1,22 @@
+      <article>
+        <header>
+          <img src="status.png" alt="A signal symbol" />
+          <h2>Server Status</h2>
+        </header>
+        <div>
+          <ng-container *ngIf="currentStatus === 'online'; else offlineStatus">
+            <p>Servers are online</p>
+            <p>All systems are operational.</p>
+          </ng-container>
+          <ng-template #offlineStatus>
+            <ng-container *ngIf="currentStatus === 'offline'; else unknownStatus">
+              <p>Servers are offline</p>
+              <p>Functionality should be restored soon.</p>
+            </ng-container>
+          </ng-template>
+          <ng-template #unknownStatus>
+            <p>Server status is unknown</p>
+            <p>Fetching server status failed.</p>
+          </ng-template>
+        </div>
+      </article>
