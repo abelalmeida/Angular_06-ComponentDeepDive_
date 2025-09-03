@@ -32,4 +32,17 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 - component concept:
     - separate concerns 
         - every component should do one thing
-        
+#App-component.html
+- refactered to reuse dashboard-item 
+***  image = input.required<{ src: string, alt: string }>();
+     title = input.required<string>();
+***
+
+# use a built in elements
+- create a button that can be reused use your selector - setup an attribute selector `selector: button[appButton]`
+
+
+
+# Template:
+- In the New-ticket-component, we using template to saving what we enter in the form in the element
+  -- create attribute title  stored in the variable and can be used in the page as a variable with out the hash tag
