@@ -1,16 +1,15 @@
 
-
-<form (ngSubmit)="onSubmit(titleInput.value, requestInput.value)" #form>
+<form (ngSubmit)="onSubmit()" #form>
     <app-control  label="Title">
         <!-- keep the input field -->
-        <input name="text" id="title"  #titleInput #input />
+    <input name="title" id="title"  #input [(ngModel)]="enteredTitle" />
     </app-control>
     <app-control label="Request">
         <!-- keep the text area -->
-        <textarea name="request" id="request" rows="3" #requestInput #input ></textarea>
+        <textarea name="request" id="request" rows="3"  #input [(ngModel)]="enteredText"></textarea>
     </app-control>
     <p>
-        <button appButton >
+        <button appButton>
          Submit
         <span class="icon">⌲</span>
         </button>

@@ -24,7 +24,7 @@ currentStatus = signal< 'online' | 'offline' | 'unknown'>('offline');
 
   constructor(){
     effect(() => {
-      console.log('Current status changed:', this.currentStatus());
+    //  console.log('Current status changed:', this.currentStatus());
     });
   }
   private intervalId: any;

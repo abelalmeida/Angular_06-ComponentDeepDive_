@@ -16,6 +16,9 @@ export class NewTicketComponent implements OnInit, AfterViewInit
 
   //@Output() add = new EventEmitter<{title: string; request: string}>();
 
+  enteredTitle = '';
+  enteredText = '';
+
   add = output<{title: string; text: string}>();
 
 
@@ -32,20 +35,26 @@ export class NewTicketComponent implements OnInit, AfterViewInit
   //@ViewChild('form') form?: ElementRef<HTMLFormElement>;
 
   private form = viewChild.required<ElementRef<HTMLFormElement>>('form');
+  onSubmit() {
 
+    // console.log(titleInput);
+    // console.log(ticketText);
 
+    
 
-  onSubmit(title: string, ticketText: string) {
+    this.add.emit({title: this.enteredTitle, text: this.enteredText});
 
-    this.add.emit({title: title, text: ticketText});
-    console.log('Title:', title);
-    console.log('Request:', ticketText);
+    this.enteredTitle = '';
+    this.enteredText = '';
+    //console.log('Submitted  ', {title: titleElement, text: ticketText});
+    //console.log('Title:', titleElement.value);
+    //console.log('Request:', ticketText);
 
    // console.dir(titleInput);
 
-    console.log('Title:', title);
+    //console.log('Title:', title);
 
-    this.form().nativeElement.reset();
+    this.form()?.nativeElement.reset();
     //this.form?.nativeElement.reset();
     
     // console.log('Form submitted');

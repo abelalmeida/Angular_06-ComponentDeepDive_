@@ -35,21 +35,21 @@ export class ControlComponent implements AfterContentInit{
 
 
   ngAfterContentInit(): void {
-    console.log('Control initialized:');
+   // console.log('Control initialized:');
   }
 
   constructor(){
-    afterRender(() => {console.log('After render')});
+   // afterRender(() => {console.log('After render')});
 
-    afterNextRender(() => {console.log('After next render')});
+   // afterNextRender(() => {console.log('After next render')});
 
   }
 
   onClick() {
     // Handle click event
-    console.log('Control clicked:');
-    console.log('Element:', this.el);
-     console.log('Control:', this.control());
+    // console.log('Control clicked:');
+    // console.log('Element:', this.el);
+    //  console.log('Control:', this.control());
     // console.log('Control:', this.control);
     // output stuff
   }
